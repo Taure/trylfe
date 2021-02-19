@@ -1,12 +1,12 @@
--module(trylfe_comand_controller).
+-module(trylfe_command_controller).
 -export([
-         execute_comand/1
+         execute_command/1
         ]).
 
-execute_comand(#{json := #{comand := Comand}}) ->
-    run_comand(Comand),
+execute_command(#{json := #{<<"command">> := Comand}}) ->
+    run_command(Comand),
     {status, 200}.
 
-run_command(_Comand)
+run_command(_Comand) ->
     %% do something.
     ok.
